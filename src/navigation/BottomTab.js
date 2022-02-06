@@ -35,13 +35,16 @@ export default BottomTab = () => {
           );
         },
       })}>
-      {activeBottomTab?.map((item, index) => (
-        <Tab.Screen
-          key={index}
-          name={item?.routeName}
-          component={item.component}
-        />
-      ))}
+      {activeBottomTab?.map((item, index) => {
+        if (item?.isActive)
+          return (
+            <Tab.Screen
+              key={index}
+              name={item?.routeName}
+              component={item.component}
+            />
+          );
+      })}
     </Tab.Navigator>
   );
 };

@@ -11,45 +11,49 @@ const BottomTabContext = ({children}) => {
       inactiveIcon: 'home-outline',
       routeName: 'Home',
       component: Home,
+      isActive: true,
     },
     {
       activeIcon: 'chatbox',
       inactiveIcon: 'chatbox-outline',
       routeName: 'Chat',
       component: Chat,
+      isActive: true,
     },
     {
       activeIcon: 'call',
       inactiveIcon: 'call-outline',
       routeName: 'Contacts',
       component: Contacts,
+      isActive: true,
     },
     {
       activeIcon: 'time',
       inactiveIcon: 'time-outline',
       routeName: 'History',
       component: History,
+      isActive: true,
     },
-  ]);
-
-  const [inActiveBottomTab, setInActiveBottomTab] = useState([
     {
       activeIcon: 'musical-notes',
       inactiveIcon: 'musical-notes-outline',
       routeName: 'Music',
       component: Notes,
+      isActive: false,
     },
     {
       activeIcon: 'chatbubbles',
       inactiveIcon: 'chatbubbles-outline',
       routeName: 'Groups',
       component: Group,
+      isActive: false,
     },
     {
       activeIcon: 'person',
       inactiveIcon: 'person-outline',
       routeName: 'Profile',
       component: Profile,
+      isActive: false,
     },
   ]);
 
@@ -58,8 +62,6 @@ const BottomTabContext = ({children}) => {
       value={{
         activeBottomTab,
         setActiveBottomTab,
-        inActiveBottomTab,
-        setInActiveBottomTab,
       }}>
       {children}
     </Context.Provider>
